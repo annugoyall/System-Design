@@ -1,0 +1,9 @@
+1. Multiple floors to park car
+2. Entry and Exit points
+3. Parking attendance at entry and exit points
+4. Ramp to drive car to different floors
+5. Use of elevator to go to different floors
+6. Token system to park car
+7. Payment gateway at exit points
+8. Parking facility for different types of vehicle
+9. Virtual view of available parking slots
