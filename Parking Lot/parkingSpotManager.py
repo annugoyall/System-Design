@@ -28,6 +28,9 @@ class ParkingSpotManager:
                 self.parkingStrategy = RandomParkingSpot()
         self.parkingLotFactory = ParkingLotFactory()
 
+    def clearCurrentInstance(self):
+        ParkingSpotManager._instance = None
+
     def parkVehicle(self, vehicleType, vehicleNumber):
         parkingSpot = self.parkingStrategy.getParkingSpot(vehicleType=vehicleType)
         if parkingSpot:
