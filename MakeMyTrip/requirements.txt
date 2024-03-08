@@ -1,0 +1,18 @@
+1. Customer
+    a) fetch flight for a particular date, src and dest
+    b) Reserve a ticket
+    c) Cancel the reservation
+
+2. Seats
+    a) Regular
+    b) Extra leg room
+    c) Near Emergency Exit
+
+3. Admin
+    a) Add a flight
+    b) Cancel the flight
+
+4. System
+    a) fetch flights
+    b) Fix Seats
+    c) Cancel booking
