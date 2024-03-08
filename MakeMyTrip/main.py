@@ -1,3 +1,6 @@
+import threading
+lock = threading.Lock()
+
 class Seat:
     def __init__(self, row, col, type) -> None:
         self.row = row
@@ -43,10 +46,17 @@ class Flight:
                 seat.customer = None
 
     def bookSeat(self, customer, seat):
-        if seat.isFree():
-            seat.bookSeat(customer)
-            return True
-        return False
+        lock.acquire()
+        try:
+            if seat.isFree():
+                seat.bookSeat(customer)
+                print(f"Seat {seat} has been booked for {customer} for the flight {self}")
+                return True
+            else:
+                print(f"Seat {seat} is already booked")
+                return False
+        finally:
+            lock.release()
     
     def addSeat(self, seat):
         self.seats.append(seat)
@@ -178,6 +188,7 @@ print(seats)
 
 # Book a seat
 Customer1.bookFlight(flights[0], seats[0])
+Customer2.bookFlight(flights[0], seats[0])
 
 # Cancel a booking
 Customer1.cancelBooking(flights[0])
